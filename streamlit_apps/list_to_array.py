@@ -24,7 +24,6 @@ with col2:
         break_line = st.toggle("Break Line")
     with scol2:
         set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
-        option = st.selectbox("How would you like to be contacted?", ("Email", "Home phone", "Mobile phone"))
 
     st.divider()
 
