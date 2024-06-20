@@ -24,6 +24,7 @@ with col2:
         break_line = st.toggle("Break Line")
     with scol2:
         set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
+        option = st.selectbox("How would you like to be contacted?", ("Email", "Home phone", "Mobile phone"))
 
     st.divider()
 
@@ -42,7 +43,7 @@ with col2:
     python_content = str(content).replace("'",'"') if quote=='Double' else content
 
     if break_line:
-        python_content = str(content).replace(',',',\n')
+        python_content = str(python_content).replace(',',',\n')
         join_char = ''
 
     st.code(python_content, language='python')
