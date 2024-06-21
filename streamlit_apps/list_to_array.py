@@ -7,13 +7,11 @@ st.set_page_config(
     layout="wide"
 )
 
-
 col1, col2 = st.columns([0.4,0.6], gap="small")
 
 with col1:
     # Spawn a new Ace editor
     content = st_ace(auto_update=True, language="abc",  min_lines=30)   
-
 
 with col2:
     scol1, scol2, scol3 = st.columns(3, gap="small")
@@ -29,6 +27,7 @@ with col2:
 
     st.text("Pyhton / js")
     content = content.split('\n')
+    content = [x.replace('\r', '') for x in content]
 
     if on_empty:
         content = list(filter(str.strip, content))
