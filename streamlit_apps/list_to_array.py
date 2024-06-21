@@ -27,10 +27,8 @@ with col2:
 
     st.text("Pyhton / js")
     content = content.split('\n')
-    
-    st.text(content)
+
     content = [x.replace('\r', '') for x in content]
-    st.text(content)
 
     if on_empty:
         content = list(filter(str.strip, content))
