@@ -11,9 +11,10 @@ margins_css = """
     <style>
         .main > div {
             padding-left: 1rem;
-            padding-right: 1rem;
+            padding-right: 2rem;
+            padding-top: 0rem;
         }
-        footer {visibility: hidden;}
+        header {display: none!important;}
     </style>
 """
 
@@ -28,9 +29,12 @@ with col1:
 with col2:
     with st.container(border=True):
         quote = st.radio("Quotes", ['Simple', 'Double'])
+        set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
         on_empty = st.toggle("Ignore Empty Line")
         break_line = st.toggle("Break Line")
-        set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
+        on_duplicates = st.toggle("Remove Duplicates")
+        on_sort = st.toggle("Sort Items")
+        
 
 with col3:
 
@@ -41,7 +45,12 @@ with col3:
 
     if on_empty:
         content = list(filter(str.strip, content))
-    
+    if on_duplicates:
+        content  = list(set(content))
+
+    if on_sort:
+        content.sort()
+
     if set_case=='Upper':
         content = [x.upper() for x in content]
 
@@ -54,7 +63,8 @@ with col3:
         python_content = str(python_content).replace(',',',\n')
         join_char = ''
 
-    st.code(python_content, language='python')
+    with st.container(height=200, border=False):
+        st.code(python_content, language='python')
 
     st.text("Raw")
     raw = ','.join(content)
@@ -62,6 +72,7 @@ with col3:
     if break_line:
          raw = ','.join(content).replace(',',',\n')
 
-    st.code(raw, language='python')
+    with st.container(height=200, border=False):
+        st.code(raw, language='python')
 
 
