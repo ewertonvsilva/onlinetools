@@ -33,16 +33,6 @@ with col2:
         set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
 
 with col3:
-    # scol1, scol2, scol3 = st.columns(3, gap="small")
-    # with scol1:
-        
-    # with scol3:
-    #     on_empty = st.toggle("Ignore Empty Line")
-    #     break_line = st.toggle("Break Line")
-    # with scol2:
-    #     set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
-
-    # st.divider()
 
     st.text("Pyhton / js")
     content = content.split('\n')
