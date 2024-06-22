@@ -7,6 +7,17 @@ st.set_page_config(
     layout="wide"
 )
 
+margins_css = """
+    <style>
+        .main > div {
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+    </style>
+"""
+
+st.markdown(margins_css, unsafe_allow_html=True)
+
 col1, col2 = st.columns([0.4,0.6], gap="small")
 
 with col1:
