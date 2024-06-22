@@ -26,10 +26,11 @@ with col1:
     content = st_ace(auto_update=True, language="abc",  min_lines=30)   
 
 with col2:
-    quote = st.radio("Quotes", ['Simple', 'Double'])
-    on_empty = st.toggle("Ignore Empty Line")
-    break_line = st.toggle("Break Line")
-    set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
+    with st.container(border=True):
+        quote = st.radio("Quotes", ['Simple', 'Double'])
+        on_empty = st.toggle("Ignore Empty Line")
+        break_line = st.toggle("Break Line")
+        set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
 
 with col3:
     # scol1, scol2, scol3 = st.columns(3, gap="small")
