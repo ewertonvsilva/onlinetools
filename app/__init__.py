@@ -1,10 +1,11 @@
 from flask import Flask
+import os
 
-from config import Config
+from config import config
 
-def create_app(config_class=Config):
+def create_app(config_class=config):
     app = Flask(__name__)
-    app.config.from_object(config_class)
+    app.config.from_object(config_class[os.getenv('FLASK_ENV', 'dev')])
 
     # Initialize Flask extensions here
 

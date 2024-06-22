@@ -3,11 +3,18 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')\
-        or 'sqlite:///' + os.path.join(basedir, 'app.db')
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+class ProdConfig:
+    STREAMLIT_APPS_URL = {
+        "list_to_array": "http://localhost:8501",
+        "code_editor": "http://localhost:8502"
+    }
 
-    # - Streamlit apps urls:
-    
+
+class DevConfig:
+    STREAMLIT_APPS_URL = {
+        "list_to_array": "https://onlinetools-list-to-array.streamlit.app",
+        "code_editor": "http://localhost:8502"
+    }
+
+
+config = {"dev": DevConfig, "prod": ProdConfig, "production": ProdConfig}
