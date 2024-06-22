@@ -13,12 +13,13 @@ margins_css = """
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        footer {visibility: hidden;}
     </style>
 """
 
 st.markdown(margins_css, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([0.4,0.2,0.4], gap="small")
+col1, col2, col3 = st.columns([0.45,0.1,0.45], gap="small")
 
 with col1:
     # Spawn a new Ace editor
