@@ -2,6 +2,8 @@ import json
 import streamlit as st
 from streamlit_ace import st_ace
 
+OUTPUT_HEIGHT = 250
+
 st.set_page_config(
     page_title="List to Array",
     layout="wide"
@@ -19,12 +21,13 @@ margins_css = """
 """
 
 st.markdown(margins_css, unsafe_allow_html=True)
+# ----
 
 col1, col2, col3 = st.columns([0.41,0.18,0.41], gap="small")
 
 with col1:
     # Spawn a new Ace editor
-    content = st_ace(auto_update=True, language="abc",  min_lines=30)   
+    content = st_ace(auto_update=True, language="abc",  min_lines=31, height=600)   
 
 with col2:
     with st.container(border=True):
@@ -63,7 +66,7 @@ with col3:
         python_content = str(python_content).replace(',',',\n')
         join_char = ''
 
-    with st.container(height=200, border=False):
+    with st.container(height=OUTPUT_HEIGHT, border=False):
         st.code(python_content, language='python')
 
     st.text("Raw")
@@ -72,7 +75,7 @@ with col3:
     if break_line:
          raw = ','.join(content).replace(',',',\n')
 
-    with st.container(height=200, border=False):
+    with st.container(height=OUTPUT_HEIGHT, border=False):
         st.code(raw, language='python')
 
 

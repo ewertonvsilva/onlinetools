@@ -4,66 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>OnlineTools</title>
-    <style>
-        /* h2 {
-            width: 100%;
-        }
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static',filename='images/favicon.svg') }}">
 
-        .title {
-            margin: 5px;
-            width: 100%;
-        }
-
-        .content {
-            margin: 5px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-
-        .post {
-            flex: 20%;
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3;
-            inline-size: 100%;
-        }
-
-        .title a {
-            color: #00a36f;
-            text-decoration: none;
-        }
-
-        nav a {
-            color: #000000;
-            font-size: 3em;
-            margin-left: 50px;
-            text-decoration: none;
-        } */
-
-        /* html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            overflow: hidden;
-            margin: 0;
-        } */
-
-
-    </style>
 </head>
 
 <body>
-    <nav>
-        <a href="{{ url_for('main.index') }}">FlaskApp</a>
-        <a href="#">Posts</a>
-        <a href="#">Categories</a>
-        <a href="#">Questions</a>
-    </nav>
-    <hr>
+    <div class="topnav">
+        <a class="active" href="#"><i class="fa-solid fa-screwdriver-wrench">OnlineTools</i> </a>
+        <a href="/">List to Array</a>
+        <a href="/text_editor">Text Editor</a>
+    </div>
+
     <div class="content">
         {% block content %} {% endblock %}
     </div>
