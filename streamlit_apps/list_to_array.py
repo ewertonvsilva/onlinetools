@@ -11,14 +11,14 @@ margins_css = """
     <style>
         .main > div {
             padding-left: 0rem;
-            padding-right: 0rem;
+            padding-right: 2rem;
         }
     </style>
 """
 
 st.markdown(margins_css, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([0.3,0.2,0.5], gap="small")
+col1, col2, col3 = st.columns(3, gap="small")
 
 with col1:
     # Spawn a new Ace editor
