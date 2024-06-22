@@ -24,7 +24,7 @@ with col1:
     # Spawn a new Ace editor
     content = st_ace(auto_update=True, language="abc",  min_lines=30)   
 
-with con2:
+with col2:
     quote = st.radio("Quotes", ['Simple', 'Double'])
     on_empty = st.toggle("Ignore Empty Line")
     break_line = st.toggle("Break Line")
