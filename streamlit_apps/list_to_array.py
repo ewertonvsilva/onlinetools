@@ -10,8 +10,8 @@ st.set_page_config(
 margins_css = """
     <style>
         .main > div {
-            padding-left: 0rem;
-            padding-right: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     </style>
 """
