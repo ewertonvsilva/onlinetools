@@ -18,23 +18,29 @@ margins_css = """
 
 st.markdown(margins_css, unsafe_allow_html=True)
 
-col1, col2 = st.columns([0.4,0.6], gap="small")
+col1, col2, col3 = st.columns([0.3,0.2,0.5], gap="small")
 
 with col1:
     # Spawn a new Ace editor
     content = st_ace(auto_update=True, language="abc",  min_lines=30)   
 
-with col2:
-    scol1, scol2, scol3 = st.columns(3, gap="small")
-    with scol1:
-        quote = st.radio("Quotes", ['Simple', 'Double'])
-    with scol3:
-        on_empty = st.toggle("Ignore Empty Line")
-        break_line = st.toggle("Break Line")
-    with scol2:
-        set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
+with con2:
+    quote = st.radio("Quotes", ['Simple', 'Double'])
+    on_empty = st.toggle("Ignore Empty Line")
+    break_line = st.toggle("Break Line")
+    set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
 
-    st.divider()
+with col3:
+    # scol1, scol2, scol3 = st.columns(3, gap="small")
+    # with scol1:
+        
+    # with scol3:
+    #     on_empty = st.toggle("Ignore Empty Line")
+    #     break_line = st.toggle("Break Line")
+    # with scol2:
+    #     set_case = st.radio("Case", ['As Source', 'Upper', 'Lower'])
+
+    # st.divider()
 
     st.text("Pyhton / js")
     content = content.split('\n')
