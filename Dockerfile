@@ -10,6 +10,9 @@ WORKDIR /myapp
 
 COPY . .
 
+# Install dependencies 
+RUN pip install --no-cache-dir -r requirements.txt
+
 # Expose the port your application will run on
 EXPOSE 8080
 
