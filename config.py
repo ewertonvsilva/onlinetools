@@ -13,7 +13,7 @@ class ProdConfig:
 class DevConfig:
     STREAMLIT_APPS_URL = {
         "list_to_array": "https://onlinetools-list-to-array.streamlit.app",
-        "code_editor": "http://localhost:8502"
+        "code_editor": "https://onlinetools-code-editor.streamlit.app"
     }
 
 

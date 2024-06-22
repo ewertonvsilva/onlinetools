@@ -27,7 +27,7 @@ col1, col2, col3 = st.columns([0.41,0.18,0.41], gap="small")
 
 with col1:
     # Spawn a new Ace editor
-    content = st_ace(auto_update=True, language="abc",  min_lines=31, height=600)   
+    content = st_ace("Past your list here", auto_update=True, language="abc",  min_lines=31, height=600)   
 
 with col2:
     with st.container(border=True):
