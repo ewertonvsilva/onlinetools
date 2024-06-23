@@ -3,17 +3,17 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-class ProdConfig:
+class DevConfig:
     STREAMLIT_APPS_URL = {
         "list_to_array": "http://localhost:8501",
-        "code_editor": "http://localhost:8502"
+        "text_editor": "http://localhost:8502"
     }
 
 
-class DevConfig:
+class ProdConfig:
     STREAMLIT_APPS_URL = {
         "list_to_array": "https://onlinetools-list-to-array.streamlit.app",
-        "code_editor": "https://onlinetools-code-editor.streamlit.app"
+        "text_editor": "https://onlinetools-code-editor.streamlit.app"
     }
 
 

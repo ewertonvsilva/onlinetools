@@ -27,7 +27,7 @@ col1, col2, col3 = st.columns([0.41,0.18,0.41], gap="small")
 
 with col1:
     # Spawn a new Ace editor
-    content = st_ace("Past your list here", auto_update=True, language="abc",  min_lines=31, height=600)   
+    content = st_ace(auto_update=True, language="abc",  min_lines=31, height=600)   
 
 with col2:
     with st.container(border=True):
@@ -61,10 +61,22 @@ with col3:
         content = [x.lower() for x in content]
     
     python_content = str(content).replace("'",'"') if quote=='Double' else content
+    python_content_list = content
 
     if break_line:
-        python_content = str(python_content).replace(',',',\n')
-        join_char = ''
+        quote_type = '"' if quote=='Double' else "'"
+        tmp_content = "[\n"
+        tmp_raw_content = ''
+        last_c = 0
+        for element in python_content_list:
+            last_c +=1
+            tmp_content +=f" {quote_type}{element}{quote_type}{',' if not (last_c == len(python_content_list)) else ''}\n"  # Add quotes and trailing comma
+            tmp_raw_content +=f" {element}{',' if not (last_c == len(python_content_list)) else ''}\n"  # Add quotes and trailing comma
+
+
+        tmp_content +="]"
+
+        python_content = tmp_content
 
     with st.container(height=OUTPUT_HEIGHT, border=False):
         st.code(python_content, language='python')
@@ -73,7 +85,7 @@ with col3:
     raw = ','.join(content)
 
     if break_line:
-         raw = ','.join(content).replace(',',',\n')
+         raw = tmp_raw_content
 
     with st.container(height=OUTPUT_HEIGHT, border=False):
         st.code(raw, language='python')

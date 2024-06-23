@@ -75,7 +75,7 @@ with col2:
             st.session_state.changed_content = st.session_state.previous
 
     # -- replace
-    with st.form("replace_form"):
+    with st.form("replace_form", clear_on_submit=True):
         colfr1,colfr2,colfr3 = st.columns(3, gap="small")
 
         replace_from = colfr1.text_input('from', placeholder='From', label_visibility='collapsed')
@@ -87,7 +87,7 @@ with col2:
             st.session_state.changed_content = st.session_state.content.replace(replace_from, replace_to)
 
     # -- prefix
-    with st.form("prefix_form"):
+    with st.form("prefix_form", clear_on_submit=True):
         colp1,colp2 = st.columns([2,1], gap="small")
 
         prefix = colp1.text_input('', placeholder='Prefix', label_visibility='collapsed')
@@ -98,7 +98,7 @@ with col2:
             st.session_state.changed_content = add_prefix(st.session_state.content, prefix)
 
     # -- sufix
-    with st.form("sufix_form"):
+    with st.form("sufix_form", clear_on_submit=True):
         colp1,colp2 = st.columns([2,1], gap="small")
 
         sufix = colp1.text_input('', placeholder='sufix', label_visibility='collapsed')
