@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_monaco import st_monaco
 
 st.set_page_config(
-    page_title="List to Array",
+    page_title="Code Editor",
     layout="wide"
 )
 
