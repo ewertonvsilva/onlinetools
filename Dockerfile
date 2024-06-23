@@ -4,6 +4,7 @@ FROM python:3.11-alpine
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV FLASK_APP app
+ENV FLASK_ENV production
 
 # Create and set the working directory
 WORKDIR /myapp
