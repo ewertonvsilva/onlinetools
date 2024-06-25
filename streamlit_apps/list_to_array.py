@@ -6,7 +6,8 @@ OUTPUT_HEIGHT = 250
 
 st.set_page_config(
     page_title="List to Array",
-    layout="wide"
+    layout="wide",
+    page_icon=":material/data_array:"
 )
 
 margins_css = """
