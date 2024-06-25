@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJQ1R98WPW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VJQ1R98WPW');
+    </script>
     <meta charset="UTF-8">
     <title>OnlineTools</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
@@ -10,6 +19,7 @@
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static',filename='images/favicon.svg') }}">
 
 </head>
+
 
 <body>
     <div class="topnav">
