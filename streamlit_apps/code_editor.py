@@ -4,7 +4,7 @@ from streamlit_monaco import st_monaco
 st.set_page_config(
     page_title="Code Editor",
     layout="wide",
-    page_icon=':materialize/edit_note:'
+    page_icon=':material/edit_note:'
 )
 
 margins_css = """
