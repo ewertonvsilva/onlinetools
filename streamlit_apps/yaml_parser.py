@@ -26,7 +26,7 @@ st.markdown(margins_css, unsafe_allow_html=True)
 
 col1, col2 = st.columns([0.5,0.5], gap="small")
 
-f = col1.text_area("Yaml Input", height=400) 
+f = col1.text_area("Yaml Input", height=600) 
 
 yaml_obj = yaml.safe_load(f) 
 json_str = json.dumps(yaml_obj)
