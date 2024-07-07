@@ -20,5 +20,5 @@ def sql_formatter():
     return render_template('sql_formatter.html', streamlit_apps_url=current_app.config['STREAMLIT_APPS_URL'])
 
 @bp.route('/json_formatter')
-def sql_formatter():
+def json_parser():
     return render_template('json_parser.html', streamlit_apps_url=current_app.config['STREAMLIT_APPS_URL'])
