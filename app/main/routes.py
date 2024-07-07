@@ -24,5 +24,5 @@ def json_parser():
     return render_template('json_parser.html', streamlit_apps_url=current_app.config['STREAMLIT_APPS_URL'])
 
 @bp.route('/diff')
-def json_parser():
+def diff():
     return render_template('diff.html', streamlit_apps_url=current_app.config['STREAMLIT_APPS_URL'])
