@@ -24,7 +24,7 @@ st.markdown(margins_css, unsafe_allow_html=True)
 # st.set_page_config(page_title='Yaml Parser',layout="wide", page_icon =':material/integration_instructions:' )
 
 
-col1, col2 = st.columns([0.4,0.6], gap="small")
+col1, col2 = st.columns([0.5,0.5], gap="small")
 
 f = col1.text_area("Yaml Input", height=400) 
 

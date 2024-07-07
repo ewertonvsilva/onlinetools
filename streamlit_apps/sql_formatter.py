@@ -23,7 +23,7 @@ st.markdown(margins_css, unsafe_allow_html=True)
 # st.set_page_config(page_title='SQL Formater', layout="wide", page_icon=':material/join_inner:')
 
 
-col1, col2 = st.columns([0.4,0.6], gap="small")
+col1, col2 = st.columns([0.5,0.5], gap="small")
 
 in_code = col1.text_area("SQL Query", height=400)
 out_code = sqlparse.format(in_code, reindent=True, keyword_case='upper')
