@@ -18,7 +18,7 @@ class ProdConfig:
         "text_editor": "https://onlinetools-code-editor.streamlit.app",
         "yaml_parser": "https://onlinetools-yaml-parsing.streamlit.app",
         "sql_formatter": "https://onlinetools-sql-formatter.streamlit.app",
-        "json_parser": "https://onlinetools-json-parsing.streamlit.app",
+        "json_parser": "https://onlinetools-json-parsing.streamlit.app"
 
     }
 
