@@ -21,7 +21,7 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Daily Tasks Tools</a>
+        <a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Daily Tasks Tools</a>
         <a {% if request.endpoint == 'main.list_to_array' %}class='active'{% endif %} href="{{ url_for('main.list_to_array') }}" >List to Array</a>
         <a {% if request.endpoint == 'main.diff' %}class='active'{% endif %} href="{{ url_for('main.diff') }}">Diff</a>
         <a {% if request.endpoint == 'main.sql_formatter' %}class='active'{% endif %} href="{{ url_for('main.sql_formatter') }}">SQL Formatter</a>
