@@ -9,7 +9,8 @@ class DevConfig:
         "text_editor": "http://localhost:8502",
         "yaml_parser": "http://localhost:8502",
         "sql_formatter": "http://localhost:8504",
-        "json_parser": "http://localhost:8504"
+        "json_parser": "http://localhost:8505",
+        "diff": "http://localhost:8506"
     }
 
 class ProdConfig:
@@ -18,7 +19,9 @@ class ProdConfig:
         "text_editor": "https://onlinetools-code-editor.streamlit.app",
         "yaml_parser": "https://onlinetools-yaml-parsing.streamlit.app",
         "sql_formatter": "https://onlinetools-sql-formatter.streamlit.app",
-        "json_parser": "https://onlinetools-json-parsing.streamlit.app"
+        "json_parser": "https://onlinetools-json-parsing.streamlit.app",
+        "diff": "https://onlinetools-diff.streamlit.app",
+
 
     }
 
