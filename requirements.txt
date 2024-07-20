@@ -1,11 +1,10 @@
+streamlit==1.36.0
 streamlit-ace==0.1.1
 sqlparse==0.5.0
 PyYAML==6.0.1
-streamlit-elements==0.1.*
 st-diff-viewer==1.0.6
 st-diff-viewer==1.0.6
 st-theme==1.2.3
-streamlit==1.36.0
 streamlit-ace==0.1.1
 streamlit-diff-viewer==0.0.2
 streamlit-elements==0.1.0
