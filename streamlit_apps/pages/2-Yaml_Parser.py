@@ -1,6 +1,7 @@
 import yaml
 import json
 import streamlit as st
+from streamlit_ace import st_ace
 
 st.set_page_config(
     page_title="Yaml Parser",
@@ -11,7 +12,7 @@ st.set_page_config(
 margins_css = """
     <style>
         .main > div {
-            padding-left: 1rem;
+            padding-left: 6rem;
             padding-right: 2rem;
             padding-top: 0rem;
         }
@@ -26,9 +27,13 @@ st.markdown(margins_css, unsafe_allow_html=True)
 
 col1, col2 = st.columns([0.5,0.5], gap="small")
 
-f = col1.text_area("Yaml Input", height=600) 
+
+with col1:
+    f = st_ace(auto_update=True, language="yaml",  min_lines=31, height=600) 
+
 
 yaml_obj = yaml.safe_load(f) 
+
 json_str = json.dumps(yaml_obj)
 
 if not f:

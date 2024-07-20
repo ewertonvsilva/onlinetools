@@ -1,5 +1,7 @@
 import json
 import streamlit as st
+from streamlit_ace import st_ace
+
 
 st.set_page_config(
     page_title="Json Parser",
@@ -10,7 +12,7 @@ st.set_page_config(
 margins_css = """
     <style>
         .main > div {
-            padding-left: 1rem;
+            padding-left: 6rem;
             padding-right: 2rem;
             padding-top: 0rem;
         }
@@ -23,13 +25,14 @@ st.markdown(margins_css, unsafe_allow_html=True)
 
 col1, col2 = st.columns([0.5,0.5], gap="small")
 
-f = col1.text_area("Json Input", height=700) 
 
-#yaml_obj = yaml.safe_load(f) 
-json_str = json.loads(f or "{}")
+with col1:
+    f = st_ace(auto_update=True, language="json",  min_lines=31, height=600) 
 
-# if not f:
-#     json_str = json.loads('{}') 
+try:
+    json_str = json.loads(f or "{}")
+except:
+    json_str = f
 
 col2.text('Json Parsed')
 col2.json(json_str, expanded=False)

@@ -13,7 +13,7 @@ st.set_page_config(
 margins_css = """
     <style>
         .main > div {
-            padding-left: 1rem;
+            padding-left: 6rem;
             padding-right: 2rem;
             padding-top: 0rem;
         }
